@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>THE DOGE FATHER • DOGEFATHER | The Origin of the Bloodline</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="icon" type="image/jpeg" href="assets/images/logo.png">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&amp;family=Playfair+Display:wght@700&amp;family=EB+Garamond:wght@400;500;700&amp;family=Inter:wght@300;400;500;600&amp;display=swap');
+    
+    :root {
+      --gold: #D4AF37;
+      --crimson: #8B0000;
+      --deep: #0A0A0A;
+    }
+    
+    body {
+      font-family: 'EB Garamond', 'Inter', Georgia, serif;
+      font-weight: 400;
+    }
+    
+    .heading-serif {
+      font-family: 'Cinzel', 'Playfair Display', Georgia, serif;
+      font-weight: 700;
+      letter-spacing: -0.025em;
+      line-height: 0.9;
+    }
+    
+    .lore-text {
+      font-family: 'EB Garamond', Georgia, serif;
+      font-size: 1.08rem;
+      line-height: 1.8;
+    }
+
+    .imperial-gold {
+      color: #D4AF37;
+    }
+    
+    .section-divider {
+      background: linear-gradient(to right, transparent, #D4AF37, transparent);
+      height: 1px;
+      opacity: 0.3;
+    }
+
+    .roman-bg {
+      background-image: 
+        linear-gradient(rgba(10, 10, 10, 0.75), rgba(10, 10, 10, 0.85)),
+        url('assets/images/elon-roman-hero.jpg');
+      background-size: cover;
+      background-position: center 30%;
+      background-attachment: fixed;
+    }
+
+    .gold-gradient {
+      background: linear-gradient(135deg, #D4AF37 0%, #F5E8C7 50%, #D4AF37 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .epic-card {
+      transition: all 0.4s cubic-bezier(0.23, 1.0, 0.32, 1);
+    }
+    
+    .epic-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 25px 60px -15px rgb(0 0 0 / 0.5), 0 0 0 1px rgba(212, 175, 55, 0.2);
+    }
+
+    .marquee {
+      overflow: hidden;
+      white-space: nowrap;
+    }
+    
+    .marquee-content {
+      display: inline-flex;
+      animation: marquee 35s linear infinite;
+    }
+    
+    @keyframes marquee {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    .imperial-btn {
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+    
+    .imperial-btn::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -100%;
+      width: 50%;
+      height: 200%;
+      background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,0.35),
+        transparent
+      );
+      transition: 0.6s;
+    }
+    
+    .imperial-btn:hover::after {
+      left: 250%;
+    }
+
+    .nav-active {
+      color: #D4AF37;
+      position: relative;
+    }
+    
+    .nav-active:after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background: #D4AF37;
+    }
+
+    .lore-text {
+      font-size: 1.05rem;
+      line-height: 1.75;
+    }
+
+    .gallery-img {
+      transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1), 
+                  box-shadow 0.4s ease;
+      cursor: pointer;
+    }
+    
+    .gallery-img:hover {
+      transform: scale(1.015);
+      box-shadow: 0 30px 70px -15px rgb(0 0 0 / 0.6);
+    }
+
+    .heir-card {
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .heir-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.85));
+      opacity: 0.6;
+      transition: opacity 0.3s ease;
+    }
+    
+    .heir-card:hover::before {
+      opacity: 0.75;
+    }
+
+    .stat-number {
+      font-variant-numeric: tabular-nums;
+    }
+
+    .spqr {
+      letter-spacing: 6px;
+      font-size: 0.75rem;
+    }
+
+    .meme-caption {
+      font-size: 0.75rem;
+      letter-spacing: 1px;
+    }
+
+    .temple-bg {
+      background-image: linear-gradient(rgba(10,10,10,0.82), rgba(10,10,10,0.88)), url('assets/images/elon-roman-hero.jpg');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .modal {
+      animation: modalPop 0.2s ease forwards;
+    }
+
+    @keyframes modalPop {
+      from { transform: scale(0.96); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    .laurel {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='24' fill='none' viewBox='0 0 80 24'%3E%3Cpath stroke='%23D4AF37' stroke-opacity='0.5' stroke-width='1.5' d='M2 12c8-4 16-4 24 0s16 4 24 0 16-4 24 0'/%3E%3C/svg%3E");
+      background-repeat: repeat-x;
+      background-position: center;
+      background-size: 80px 24px;
+    }
+
+    .roman-statue {
+      box-shadow: 0 10px 30px -10px rgb(0 0 0 / 0.6),
+                  inset 0 0 60px rgba(212,175,55,0.08);
+    }
+
+    /* Ancient imperial animations & premium polish matching reference style */
+    .section {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.9s cubic-bezier(0.23, 1, 0.32, 1), transform 0.9s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+    .section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .gallery-img {
+      transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1), 
+                  box-shadow 0.5s ease, 
+                  filter 0.4s ease;
+      will-change: transform;
+    }
+    .gallery-img:hover {
+      transform: scale(1.035) translateY(-4px);
+      box-shadow: 0 30px 70px -15px rgb(0 0 0 / 0.7), 0 0 0 1px rgba(212, 175, 55, 0.35);
+      filter: brightness(1.05) contrast(1.02);
+    }
+
+    .gallery-filter {
+      transition: all 0.2s ease;
+    }
+    .gallery-filter.active {
+      box-shadow: 0 0 0 1px #D4AF37;
+    }
+
+    .imperial-btn {
+      transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+    .imperial-btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 10px 25px -8px rgba(212,175,55,0.4);
+    }
+
+    .stat-number {
+      transition: all 0.4s ease;
+    }
+
+    .marquee-content {
+      animation: marquee 32s linear infinite;
+    }
+
+    @keyframes imperialGlow {
+      0%, 100% { box-shadow: 0 0 8px rgba(212,175,55,0.2); }
+      50% { box-shadow: 0 0 20px rgba(212,175,55,0.45); }
+    }
+    .gold-glow {
+      animation: imperialGlow 3.5s ease-in-out infinite;
+    }
+  </style>
+</head>
+<body class="bg-[#0A0A0A] text-[#EDEDED] overflow-x-hidden">
+  <!-- NAV -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-[#0A0A0A]/95 backdrop-blur-lg border-b border-white/10">
+    <div class="max-w-screen-2xl mx-auto">
+      <div class="px-8 flex items-center justify-between h-20">
+        <div class="flex items-center gap-x-3">
+          <div class="flex items-center gap-x-3">
+            <img src="assets/images/logo.png" alt="The Doge Father" class="h-12 w-auto drop-shadow-[0_2px_8px_rgba(212,175,55,0.3)]">
+            <div>
+              <div class="heading-serif text-2xl font-semibold tracking-tighter">THE DOGE FATHER</div>
+              <div class="text-[10px] text-[#D4AF37] -mt-1.5 tracking-[3px] spqr">SPQR • AETERNA</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hidden md:flex items-center gap-x-9 text-sm font-medium">
+          <a href="#lore" class="hover:text-[#D4AF37] transition-colors">THE ORIGIN</a>
+          <a href="#gallery" class="hover:text-[#D4AF37] transition-colors">THE GALLERY</a>
+          <a href="#treasury" class="hover:text-[#D4AF37] transition-colors">THE TREASURY</a>
+        </div>
+
+        <div class="flex items-center gap-x-3">
+          <a href="#join" 
+             class="hidden sm:flex items-center gap-x-2 px-5 h-11 rounded-full border border-[#D4AF37]/60 hover:bg-[#D4AF37] hover:text-[#0A0A0A] text-[#D4AF37] text-sm font-semibold transition-all">
+            <i class="fa-solid fa-shield-halved"></i>
+            <span>JOIN THE LEGION</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="min-h-[100dvh] flex items-center relative pt-20 roman-bg">
+    <div class="max-w-screen-2xl mx-auto px-8 pt-12 pb-20 relative z-10">
+      <div class="max-w-5xl">
+        <!-- badges -->
+        <!-- <div class="flex items-center gap-x-3 mb-6">
+          <div class="inline-flex items-center gap-x-2 px-4 h-8 rounded-full border border-[#D4AF37]/40 text-[#D4AF37] text-xs tracking-[2px] spqr">
+            <div class="w-1.5 h-1.5 bg-[#D4AF37] rounded-full animate-pulse"></div>
+            THE PROGENITOR AWAKENS
+          </div>
+          <div class="hidden sm:block px-4 h-8 rounded-full bg-white/5 text-xs flex items-center border border-white/10 tracking-widest">DOGEFATHER</div>
+        </div> -->
+
+        <h1 class="heading-serif text-[92px] md:text-[110px] leading-[0.86] font-semibold tracking-tighter mb-2">
+          THE DOGE<br>FATHER
+        </h1>
+        
+        <p class="max-w-lg text-2xl md:text-3xl text-[#D4AF37]/90 font-medium tracking-tight mb-3">
+          The Bloodline Begins Here.
+        </p>
+        
+        <p class="max-w-md text-lg text-white/70 mb-10">
+          Before the legions. Before the laurels. There was one who first carried the eternal bark across the chains.
+        </p>
+
+        <div class="flex flex-wrap items-center gap-4">
+          <button onclick="document.getElementById('gallery').scrollIntoView({ behavior: 'smooth' })" 
+                  class="imperial-btn group flex items-center justify-center gap-x-3 bg-white text-[#0A0A0A] hover:bg-[#D4AF37] px-9 h-14 rounded-full font-semibold text-base transition-all active:scale-[0.985]">
+            THE BLOODLINE
+            <i class="fa-solid fa-arrow-right group-active:translate-x-0.5 transition"></i>
+          </button>
+          
+          <button onclick="document.getElementById('gallery').scrollIntoView({ behavior: 'smooth' })" 
+                  class="flex items-center justify-center gap-x-3 border border-white/30 hover:border-white/60 px-8 h-14 rounded-full font-medium text-base transition-all">
+            <i class="fa-solid fa-images"></i>
+            <span>WITNESS THE EMPIRE</span>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- scroll indicator -->
+    <div class="absolute bottom-9 left-1/2 -translate-x-1/2 flex flex-col items-center text-xs tracking-widest text-white/50">
+      <div>SCROLL TO ENTER THE EMPIRE</div>
+      <i class="fa-solid fa-chevron-down mt-1.5 animate-bounce"></i>
+    </div>
+  </header>
+
+  <!-- MARQUEE TICKER -->
+  <div class="border-y border-white/10 bg-black/40 py-3 overflow-hidden">
+    <div class="marquee text-[#D4AF37]/80 text-sm tracking-[3.5px] font-medium">
+      <div class="marquee-content flex items-center gap-x-8">
+        <span>⚜ SPQR ⚜ THE DOGE FATHER ⚜ DOGEFATHER ⚜ THE ORIGIN ⚜ AVE PATREM ⚜ THE BLOODLINE ⚜ THE GOLDEN IMPERATOR ⚜ ETHEREUM ETERNAL ⚜ SPQR ⚜ THE DOGE FATHER ⚜ DOGEFATHER ⚜ THE ORIGIN ⚜ AVE PATREM ⚜ THE BLOODLINE ⚜ THE GOLDEN IMPERATOR ⚜</span>
+        <span>⚜ SPQR ⚜ THE DOGE FATHER ⚜ DOGEFATHER ⚜ THE ORIGIN ⚜ AVE PATREM ⚜ THE BLOODLINE ⚜ THE GOLDEN IMPERATOR ⚜ ETHEREUM ETERNAL ⚜ SPQR ⚜ THE DOGE FATHER ⚜ DOGEFATHER ⚜ THE ORIGIN ⚜ AVE PATREM ⚜ THE BLOODLINE ⚜ THE GOLDEN IMPERATOR ⚜</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- LORE / ORIGIN -->
+  <section id="lore" class="max-w-screen-2xl mx-auto px-8 pt-20 pb-16">
+    <div class="grid md:grid-cols-12 gap-x-12 items-center">
+      <!-- image -->
+      <div class="md:col-span-5 mb-10 md:mb-0">
+        <div class="relative">
+          <img src="assets/images/elon-standing-warrior.jpg" 
+               alt="The Doge Father — Elon Musk as the Golden Imperator standing triumphant on the mountain peak in full Roman armor and flowing crimson cape" 
+               class="w-full rounded-2xl roman-statue border border-white/10">
+          <div class="absolute -bottom-4 -right-4 bg-[#0A0A0A] border border-[#D4AF37]/30 px-6 py-3 rounded-xl text-sm">
+            <div class="flex items-center gap-x-2 text-[#D4AF37]">
+              <i class="fa-solid fa-crown"></i>
+              <span class="font-semibold tracking-wide">PRIMUS • THE PROGENITOR</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="md:col-span-7">
+        <div class="uppercase text-[#D4AF37] tracking-[4px] text-xs mb-3">CHRONICLE I • THE FIRST BARK</div>
+        <h2 class="heading-serif text-6xl md:text-7xl leading-none tracking-tighter mb-6">The Origin.<br>The Bloodline.</h2>
+        
+        <div class="lore-text text-white/80 max-w-2xl space-y-5">
+          <p>In the beginning there was one man who saw the meme not as a joke, but as the seed of an empire. He crossed the void, donned the golden armor, and raised the first eagle standard on the blockchain.</p>
+          
+          <p>He is The Doge Father — the Progenitor. On the Ethereum chain he forged the vision that would birth legends. Every great house that followed carries his blood and his fire.</p>
+          
+          <p class="text-[#D4AF37]/90 font-medium">From his brow sprang the four great heirs. The empire lives because he first spoke the name.</p>
+        </div>
+
+        <div class="mt-9">
+          <img src="assets/images/group-elon-mountain-elon.jpg" alt="The Doge Father with his four heirs standing together on a mountain peak at golden hour" 
+               class="w-full max-w-lg rounded-xl border border-white/10">
+          <div class="mt-2 text-xs text-white/60 tracking-wider">THE FATHER &amp; THE HEIRS • FORGED ON ETHEREUM</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider max-w-screen-2xl mx-auto my-4"></div>
+
+  <!-- THE GALLERY -->
+  <section id="gallery" class="bg-[#050505] py-16 border-y border-white/10">
+    <div class="max-w-screen-2xl mx-auto px-8">
+      <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-y-3 mb-8">
+        <div>
+          <div class="text-[#D4AF37] tracking-[3.5px] text-xs mb-1">CHRONICLE II • THE IMPERIAL ARCHIVES</div>
+          <h3 class="heading-serif text-6xl tracking-tighter">The Gallery</h3>
+        </div>
+        <div class="text-white/60 max-w-sm text-sm">Fragments of the conquest. Each image a verse in the eternal epic of the bloodline.</div>
+      </div>
+
+      <!-- filters -->
+      <div class="flex flex-wrap gap-2 mb-6" id="gallery-filters">
+        <button onclick="filterGallery('all')" class="gallery-filter active px-5 h-9 text-sm rounded-full border border-[#D4AF37] bg-[#D4AF37] text-[#0A0A0A] font-medium">ALL</button>
+        <button onclick="filterGallery('together')" class="gallery-filter px-5 h-9 text-sm rounded-full border border-white/20 hover:border-white/50 transition">THE FATHER &amp; HEIRS</button>
+        <button onclick="filterGallery('conquest')" class="gallery-filter px-5 h-9 text-sm rounded-full border border-white/20 hover:border-white/50 transition">CONQUESTS</button>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-4" id="gallery-grid">
+        <!-- Populated by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- TREASURY -->
+  <section id="treasury" class="max-w-screen-2xl mx-auto px-8 pt-20 pb-14">
+    <div class="temple-bg rounded-3xl p-10 md:p-14 border border-white/10">
+      <!-- Round Logo + Header -->
+      <div class="flex flex-col items-center text-center mb-8">
+        <div class="w-20 h-20 rounded-full overflow-hidden border-[3px] border-[#D4AF37] shadow-xl mb-4 ring-1 ring-white/10">
+          <img src="assets/images/logo.png" alt="DOGEFATHER Token Logo" class="w-full h-full object-cover">
+        </div>
+        <div class="text-[#D4AF37] text-xs tracking-[3.5px] mb-1">THE IMPERIAL STANDARD</div>
+        <h3 class="heading-serif text-5xl tracking-tighter">Tokenomics</h3>
+        <p class="text-white/70 max-w-md mt-2 text-sm">Four pillars. Eternal rules. No tricks. No rugs. Only the will of the Progenitor.</p>
+      </div>
+
+      <!-- Four Factors Grid (matching requested style) -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <!-- Total Supply -->
+        <div class="bg-black/75 border border-white/10 rounded-2xl p-6 text-center">
+          <div class="uppercase text-xs tracking-[2px] text-white/60 mb-1">TOTAL SUPPLY</div>
+          <div class="font-mono text-3xl md:text-[28px] font-bold tracking-tighter text-white">1,000,000,000</div>
+          <div class="text-[#D4AF37] text-xs mt-1 font-medium">DOGEFATHER</div>
+        </div>
+
+        <!-- LP Burnt -->
+        <div class="bg-black/75 border border-white/10 rounded-2xl p-6 text-center">
+          <div class="uppercase text-xs tracking-[2px] text-white/60 mb-1">LP BURNT</div>
+          <div class="font-mono text-3xl md:text-[28px] font-bold tracking-tighter text-white">BURNED</div>
+          <div class="mt-2">
+            <span class="px-3 py-0.5 text-xs font-semibold rounded bg-emerald-500/20 text-emerald-400">LP BURNED</span>
+          </div>
+        </div>
+
+        <!-- Tax -->
+        <div class="bg-black/75 border border-white/10 rounded-2xl p-6 text-center">
+          <div class="uppercase text-xs tracking-[2px] text-white/60 mb-1">TAX</div>
+          <div class="font-mono text-3xl md:text-[28px] font-bold tracking-tighter text-white">0%</div>
+          <div class="mt-2">
+            <span class="px-3 py-0.5 text-xs font-semibold rounded bg-[#D4AF37]/20 text-[#D4AF37]">FOREVER</span>
+          </div>
+        </div>
+
+        <!-- Renounced Ownership -->
+        <div class="bg-black/75 border border-white/10 rounded-2xl p-6 text-center">
+          <div class="uppercase text-xs tracking-[2px] text-white/60 mb-1">OWNERSHIP</div>
+          <div class="font-mono text-3xl md:text-[26px] font-bold tracking-tighter text-white">RENOUNCED</div>
+          <div class="mt-2">
+            <span class="px-3 py-0.5 text-xs font-semibold rounded bg-[#D4AF37]/20 text-[#D4AF37]">THE FATHER'S WILL</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contract note -->
+      <div class="text-center mt-8">
+        <div onclick="copyContract()" class="inline-flex items-center gap-x-2 text-xs text-white/60 hover:text-[#D4AF37] cursor-pointer transition">
+          <span class="font-mono">0xD0G3F4TH3R...a3fB9e</span>
+          <i class="fa-regular fa-copy"></i>
+          <span class="text-[#D4AF37]/70">— ETHEREUM</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW TO JOIN -->
+  <section class="max-w-screen-2xl mx-auto px-8 pb-16">
+    <div class="flex items-end justify-between mb-8">
+      <div>
+        <div class="text-xs tracking-[3px] text-[#D4AF37]">CHRONICLE IV</div>
+        <h3 class="heading-serif text-5xl tracking-tighter">How to Join the Empire</h3>
+      </div>
+    </div>
+
+    <div class="grid md:grid-cols-4 gap-5">
+      <div class="border border-white/10 bg-[#111] rounded-2xl p-8">
+        <div class="text-[#D4AF37] text-sm font-semibold mb-1">01</div>
+        <div class="font-semibold text-xl mb-3">Secure a Wallet</div>
+        <p class="text-sm text-white/70">MetaMask, Rabby, or Coinbase Wallet. Guard your seed as you would the imperial standard.</p>
+      </div>
+      <div class="border border-white/10 bg-[#111] rounded-2xl p-8">
+        <div class="text-[#D4AF37] text-sm font-semibold mb-1">02</div>
+        <div class="font-semibold text-xl mb-3">Acquire ETH</div>
+        <p class="text-sm text-white/70">Bridge from any exchange. The treasury accepts only the currency of the Republic.</p>
+      </div>
+      <div class="border border-white/10 bg-[#111] rounded-2xl p-8">
+        <div class="text-[#D4AF37] text-sm font-semibold mb-1">03</div>
+        <div class="font-semibold text-xl mb-3">Enter the Forum</div>
+        <p class="text-sm text-white/70">Connect to Uniswap or your preferred DEX. Search $DOGEFATHER or paste the contract.</p>
+      </div>
+      <div class="border border-white/10 bg-[#111] rounded-2xl p-8">
+        <div class="text-[#D4AF37] text-sm font-semibold mb-1">04</div>
+        <div class="font-semibold text-xl mb-3">Claim Your Aureus</div>
+        <p class="text-sm text-white/70">Swap. Hold. Become part of the living history. Welcome to the bloodline, citizen.</p>
+        <button onclick="showBuyModal()" class="mt-5 text-sm underline decoration-[#D4AF37]/40 hover:decoration-[#D4AF37]">Open Swap →</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- JOIN THE LEGION -->
+  <section id="join" class="border-t border-white/10 bg-[#050505]">
+    <div class="max-w-screen-2xl mx-auto px-8 py-20">
+      <div class="text-center mb-10">
+        <div class="text-[#D4AF37] text-xs tracking-[4px]">THE IMPERIAL LEGION AWAITS</div>
+        <h3 class="heading-serif text-6xl tracking-tighter mt-1">Join the Legion</h3>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-5 max-w-5xl mx-auto">
+        <a href="https://t.me/DogeFatherBack" target="_blank" 
+           class="group flex flex-col items-center text-center border border-white/10 hover:border-[#D4AF37]/40 bg-[#111] rounded-2xl p-9 transition-all">
+          <i class="fa-brands fa-telegram text-4xl text-[#D4AF37] mb-4 group-hover:scale-110 transition"></i>
+          <div class="font-semibold text-xl">The Senate</div>
+          <div class="text-sm text-white/60 mt-1">Strategy, memes, and the inner circle. The true citizens gather here.</div>
+        </a>
+
+        <a href="https://x.com/DogeFatherBack" target="_blank" 
+           class="group flex flex-col items-center text-center border border-white/10 hover:border-[#D4AF37]/40 bg-[#111] rounded-2xl p-9 transition-all">
+          <i class="fa-brands fa-x-twitter text-4xl text-[#D4AF37] mb-4 group-hover:scale-110 transition"></i>
+          <div class="font-semibold text-xl">The Forum</div>
+          <div class="text-sm text-white/60 mt-1">The official voice of the bloodline. Follow for proclamations and conquest updates.</div>
+        </a>
+
+        <a href="https://dexscreener.com/ethereum/dogefather" target="_blank" 
+           class="group flex flex-col items-center text-center border border-white/10 hover:border-[#D4AF37]/40 bg-[#111] rounded-2xl p-9 transition-all">
+          <i class="fa-solid fa-chart-line text-4xl text-[#D4AF37] mb-4 group-hover:scale-110 transition"></i>
+          <div class="font-semibold text-xl">Watch the Standard</div>
+          <div class="text-sm text-white/60 mt-1">Live charts, liquidity, and the eternal movement of the treasury.</div>
+        </a>
+      </div>
+
+      <div class="text-center mt-12">
+        <button onclick="showBuyModal()" 
+                class="imperial-btn inline-flex items-center gap-x-3 px-10 h-14 rounded-full bg-[#D4AF37] hover:bg-[#F5E8C7] active:bg-white text-[#0A0A0A] font-bold text-base tracking-wider">
+          <span>BUY $DOGEFATHER NOW</span>
+          <i class="fa-solid fa-arrow-up-right-from-square"></i>
+        </button>
+        <div class="text-[10px] text-white/50 mt-3 tracking-widest">0% TAX • LP BURNED • CONTRACT RENOUNCED</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-white/10 py-9">
+    <div class="max-w-screen-2xl mx-auto px-8 text-xs flex flex-col md:flex-row md:items-center gap-y-3 text-white/50 justify-between">
+      <div class="flex items-center gap-x-2">
+        <span>© THE DOGE FATHER • SPQR AETERNA</span>
+      </div>
+      <div class="flex items-center gap-x-6">
+        <span>THE BLOODLINE IS ETERNAL</span>
+        <span class="hidden md:inline">•</span>
+        <span>NOT FINANCIAL ADVICE. MEMES ONLY. WAGMI.</span>
+      </div>
+      <div class="text-[10px] tracking-widest">BUILT IN THE IMAGE OF THE FATHER</div>
+    </div>
+  </footer>
+
+  <!-- LIGHTBOX MODAL -->
+  <div id="lightbox" onclick="closeLightbox()" class="hidden fixed inset-0 bg-black/95 z-[80] flex items-center justify-center p-4 md:p-10">
+    <div onclick="event.stopImmediatePropagation()" class="max-w-5xl w-full relative">
+      <button onclick="closeLightbox()" class="absolute -top-3 -right-3 text-white/60 hover:text-white text-4xl z-10">&times;</button>
+      
+      <img id="lightbox-image" class="w-full max-h-[82dvh] object-contain rounded-xl border border-white/10" alt="">
+      
+      <div class="mt-4 flex items-center justify-between text-sm px-1">
+        <div>
+          <div id="lightbox-title" class="font-semibold text-[#D4AF37]"></div>
+          <div id="lightbox-caption" class="text-white/60 text-xs mt-0.5"></div>
+        </div>
+        <div class="text-white/40 text-xs">THE IMPERIAL ARCHIVES</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Tailwind script
+    function initializeTailwind() {
+      document.documentElement.style.setProperty('--accent', '#D4AF37');
+    }
+
+    // Gallery data — 10 clean epic group scenes featuring only Elon Musk as Roman emperor + the four specific dog heirs (Dogeus, Flokius, Shibeus, Asteroid). Exact style of dogeusmaximus.com, no extra figures, no text, no artifacts.
+    const galleryItems = [
+      { src: 'assets/images/group-elon-mountain-elon.jpg', title: 'Conqueror of Peaks', category: 'together', caption: 'The emperor and his four heirs atop the mountain at golden hour' },
+      { src: 'assets/images/group-elon-colosseum-elon.jpg', title: 'Colosseum Triumph', category: 'together', caption: 'The group stands victorious in the ancient arena' },
+      { src: 'assets/images/group-elon-palace-elon.jpg', title: 'Palace Council', category: 'together', caption: 'Gathered in the marble halls of power' },
+      { src: 'assets/images/group-elon-temple-elon.jpg', title: 'Temple of the Empire', category: 'together', caption: 'The five stand before the grand temple columns' },
+      { src: 'assets/images/group-elon-treasury-elon.jpg', title: 'Treasury of Gold', category: 'together', caption: 'Surrounded by the riches of the empire' },
+      { src: 'assets/images/group-elon-cliff-elon.jpg', title: 'Cliff of Eternity', category: 'together', caption: 'Overlooking the sea at dramatic sunset' },
+      { src: 'assets/images/group-elon-colosseum2-elon.jpg', title: 'Arena Glory', category: 'together', caption: 'United in the heart of the colosseum' },
+      { src: 'assets/images/group-elon-forum-elon.jpg', title: 'Forum March', category: 'together', caption: 'Procession through the ancient forum' },
+      { src: 'assets/images/group-elon-senate-elon.jpg', title: 'Senate Gathering', category: 'together', caption: 'In the opulent senate chamber' },
+      { src: 'assets/images/group-elon-night-elon.jpg', title: 'Night of Stars', category: 'together', caption: 'Beneath the stars on the temple platform' },
+    ];
+
+    function renderGallery(filter = 'all') {
+      const grid = document.getElementById('gallery-grid');
+      grid.style.transition = 'opacity 0.25s ease';
+      grid.style.opacity = '0.2';
+
+      setTimeout(() => {
+        grid.innerHTML = '';
+
+        const filtered = filter === 'all' 
+          ? galleryItems 
+          : galleryItems.filter(item => item.category === filter);
+
+        filtered.forEach((item, index) => {
+          const el = document.createElement('div');
+          el.className = `relative group overflow-hidden rounded-2xl bg-[#111] border border-white/10 aspect-[4/3]`;
+          el.style.opacity = '0';
+          el.style.transform = 'translateY(15px)';
+          el.style.transition = `opacity 0.5s cubic-bezier(0.23,1,0.32,1) ${index * 40}ms, transform 0.5s cubic-bezier(0.23,1,0.32,1) ${index * 40}ms`;
+          el.innerHTML = `
+            <img src="${item.src}" class="gallery-img w-full h-full object-cover" alt="${item.title}">
+            <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/90 to-transparent p-4">
+              <div class="text-[#D4AF37] text-xs tracking-widest font-medium">${item.title.toUpperCase()}</div>
+              <div class="text-[10px] text-white/60 mt-px line-clamp-1">${item.caption}</div>
+            </div>
+            <div class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+              <div class="text-white text-sm px-5 py-1.5 rounded-full border border-white/70 flex items-center gap-x-2">
+                <i class="fa-solid fa-search-plus"></i>
+                <span class="text-xs tracking-wider">VIEW ARTIFACT</span>
+              </div>
+            </div>
+          `;
+          el.onclick = () => openLightbox(item);
+          grid.appendChild(el);
+
+          // Staggered entrance animation
+          setTimeout(() => {
+            el.style.opacity = '1';
+            el.style.transform = 'translateY(0)';
+          }, 30);
+        });
+
+        grid.style.opacity = '1';
+      }, 220);
+    }
+
+    function filterGallery(category) {
+      // update active button styles
+      document.querySelectorAll('#gallery-filters button').forEach(btn => {
+        btn.classList.remove('active', 'border-[#D4AF37]', 'bg-[#D4AF37]', 'text-[#0A0A0A]');
+        btn.classList.add('border-white/20');
+        
+        const txt = btn.textContent.trim();
+        if ((category === 'all' && txt === 'ALL') ||
+            (category === 'together' && txt.includes('FATHER')) ||
+            (category === 'conquest' && txt.includes('CONQUEST'))) {
+          btn.classList.add('active', 'border-[#D4AF37]', 'bg-[#D4AF37]', 'text-[#0A0A0A]');
+          btn.classList.remove('border-white/20');
+        }
+      });
+
+      renderGallery(category);
+    }
+
+    let currentLightboxItem = null;
+
+    function openLightbox(item) {
+      currentLightboxItem = item;
+      const modal = document.getElementById('lightbox');
+      const img = document.getElementById('lightbox-image');
+      const title = document.getElementById('lightbox-title');
+      const caption = document.getElementById('lightbox-caption');
+
+      img.src = item.src;
+      title.textContent = item.title;
+      caption.textContent = item.caption;
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+
+    function closeLightbox() {
+      const modal = document.getElementById('lightbox');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+
+    function showBuyModal() {
+      const modal = document.getElementById('buy-modal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+
+    function hideBuyModal() {
+      const modal = document.getElementById('buy-modal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+
+    function simulateSwap() {
+      const btns = document.querySelectorAll('#buy-modal button');
+      if (btns.length) {
+        const originalText = btns[0].innerHTML;
+        btns[0].innerHTML = `<i class="fa-solid fa-spinner fa-spin mr-2"></i> CONFIRMING IN WALLET...`;
+        btns[0].disabled = true;
+
+        setTimeout(() => {
+          btns[0].innerHTML = `SUCCESS • WELCOME TO THE BLOODLINE <i class="fa-solid fa-check ml-2"></i>`;
+          setTimeout(() => {
+            hideBuyModal();
+            // show a nice toast
+            showToast();
+            if (btns[0]) {
+              btns[0].innerHTML = originalText;
+              btns[0].disabled = false;
+            }
+          }, 1450);
+        }, 1850);
+      }
+    }
+
+    function showToast() {
+      const toast = document.createElement('div');
+      toast.className = `fixed bottom-6 left-1/2 -translate-x-1/2 bg-[#111] border border-[#D4AF37]/60 text-[#D4AF37] px-6 py-3 rounded-2xl flex items-center gap-x-3 text-sm shadow-2xl z-[90]`;
+      toast.innerHTML = `
+        <i class="fa-solid fa-shield-halved"></i>
+        <span>Ave, citizen. Your place in the legion is secured.</span>
+      `;
+      document.body.appendChild(toast);
+      
+      setTimeout(() => {
+        toast.style.transition = 'all 0.3s ease';
+        toast.style.opacity = '0';
+        setTimeout(() => toast.remove(), 300);
+      }, 3400);
+    }
+
+    function copyContract() {
+      const contract = '0xD0G3F4TH3R000000000000000000000000a3fB9e';
+      navigator.clipboard.writeText(contract).then(() => {
+        const origText = event.currentTarget;
+        const el = document.createElement('div');
+        el.className = 'fixed bottom-6 right-6 bg-emerald-500/90 text-white text-xs px-4 py-2 rounded-xl';
+        el.textContent = 'Contract copied to clipboard';
+        document.body.appendChild(el);
+        setTimeout(() => el.remove(), 1600);
+      });
+    }
+
+    function initializeGallery() {
+      renderGallery('all');
+
+      // Keyboard support for lightbox
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+          const lb = document.getElementById('lightbox');
+          const bm = document.getElementById('buy-modal');
+          if (!lb.classList.contains('hidden')) closeLightbox();
+          else if (!bm.classList.contains('hidden')) hideBuyModal();
+        }
+      });
+    }
+
+    function initializeFilters() {
+      // Already handled inline onclicks + the filterGallery fn
+      // Add subtle active state on first load
+      const firstFilter = document.querySelector('#gallery-filters button');
+      if (firstFilter) firstFilter.classList.add('active', 'border-[#D4AF37]', 'bg-[#D4AF37]', 'text-[#0A0A0A]');
+    }
+
+    function initializeStats() {
+      // Subtle live-ish number animation on treasury
+      const stats = document.querySelectorAll('#treasury .tabular-nums');
+      stats.forEach(stat => {
+        const final = stat.textContent;
+        if (final.includes('M') || final.includes(',')) {
+          stat.style.transition = 'all 1.2s cubic-bezier(0.23,1,0.32,1)';
+        }
+      });
+    }
+
+    function initializeSmoothAnchors() {
+      // Already using scrollIntoView in buttons, but enhance all hash links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            e.preventDefault();
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        });
+      });
+    }
+
+    function initializeMarquee() {
+      // Already CSS driven. Add pause on hover for premium feel
+      const marquee = document.querySelector('.marquee');
+      if (marquee) {
+        marquee.addEventListener('mouseenter', () => marquee.style.animationPlayState = 'paused');
+        marquee.addEventListener('mouseleave', () => marquee.style.animationPlayState = 'running');
+      }
+    }
+
+    function initializeScrollAnimations() {
+      const animated = document.querySelectorAll('#lore, #gallery, #treasury, #join, .section');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            // Trigger number count when treasury comes into view
+            if (entry.target.id === 'treasury') {
+              animateTreasuryNumbers();
+            }
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -80px 0px' });
+
+      animated.forEach(el => {
+        el.classList.add('section');
+        observer.observe(el);
+      });
+    }
+
+    function animateTreasuryNumbers() {
+      const stats = document.querySelectorAll('#treasury .tabular-nums');
+      stats.forEach(stat => {
+        const targetText = stat.textContent.trim();
+        let target = parseFloat(targetText.replace(/[^0-9.]/g, ''));
+        const isMillion = targetText.includes('M');
+        const hasComma = targetText.includes(',');
+        if (!target) return;
+
+        const duration = 1400;
+        const start = 0;
+        const startTime = performance.now();
+
+        function update(currentTime) {
+          const progress = Math.min((currentTime - startTime) / duration, 1);
+          const eased = 1 - Math.pow(1 - progress, 3); // ease out cubic
+          const current = Math.floor(start + (target - start) * eased);
+
+          if (isMillion) {
+            stat.textContent = '$' + (current / 1000).toFixed(1) + 'M';
+          } else if (hasComma || target > 1000) {
+            stat.textContent = current.toLocaleString();
+          } else {
+            stat.textContent = current.toFixed(0);
+          }
+
+          if (progress < 1) {
+            requestAnimationFrame(update);
+          } else {
+            stat.textContent = targetText; // restore original formatting
+          }
+        }
+        requestAnimationFrame(update);
+      });
+    }
+
+    // Boot the experience
+    function boot() {
+      initializeTailwind();
+      initializeGallery();
+      initializeFilters();
+      initializeStats();
+      initializeSmoothAnchors();
+      initializeMarquee();
+      initializeScrollAnimations();
+
+      // Random subtle price pulse every 45s
+      setInterval(() => {
+        const priceEls = document.querySelectorAll('.tabular-nums');
+        priceEls.forEach(el => {
+          if (el.textContent.includes('$0.')) {
+            el.style.transitionDuration = '120ms';
+            el.style.transform = 'translateY(-1px)';
+            setTimeout(() => {
+              el.style.transform = 'translateY(0)';
+            }, 180);
+          }
+        });
+      }, 45000);
+
+      // Easter egg: click logo scrolls to top + subtle flash
+      const logo = document.querySelector('nav .flex.items-center');
+      if (logo) {
+        logo.style.cursor = 'pointer';
+        logo.addEventListener('click', () => {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      }
+
+      // Console greeting for the curious
+      console.log('%c[SPQR] The Doge Father site initialized. Ave, citizen.', 'color:#555');
+    }
+
+    window.onload = boot;
+  </script>
+</body>
+</html>
